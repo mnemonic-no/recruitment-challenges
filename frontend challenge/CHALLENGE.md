@@ -1,42 +1,51 @@
 # Challenge
 
-Create a set of components based on the card components in the @material-ui/core package that displays the icons with their description.
+Create a small application that shows information about 10 of the original pokemons in a table.
 
 ## Prerequisites
 
 You need to have node installed on your computer
 Download from here https://nodejs.org/en/
 
-## The challenge
+## Overview
 
-Using icon-card a user should be able to:
+Create a small application that shows information about 10 of the original pokemons in a table. The column of the table should be dynamic and support showing the following attributes from each pokemon
 
-1. Display the title, description, icon and a button/link to the icons webpage by rendering one or more of the exposed components
-2. Control the icon location so that it can be rendered in at least two different locations inside the card (e.g top or bottom ).
-3. Render a loading card while data is being fetched
-4. Render a empty card if the data loading fails
-5. Customize the content of the card while data is being loaded or there is an error (such as displaying custom error messages or error components)
+- Name
+- Picture
+- Id
+- Weight
+- Height
+- Types
 
-### Requirements
+Id and Name is mandatory and should always be shown, while a user should be able to configure if the other columns should be displayed or not. Configuration should be persistent through page reloads. It should be possible for a user to obtain detailed stats(hp, defence, attack etc) about each pokemon in the table by selecting it from the table. All columns displaying numeric data should be sortable.
 
-1. All components must be located in the ./components directory
-2. Call the function exposed in api/fetchIcons.js to fetch the data.
+## Requirements
+
+1. All components must be located in the ./component directory
+2. Application should start without type errors
+3. The logic that determines what is displayed in the table should be covered by at least 1 test.
 
 When finished, the application should:
 
-1. Render a static example of a card in a loading state
-2. Render a example where the 3 icons returned from the call to fetchIcons is rendered using components form the icon-card library. While waiting for the promise to resolve the loading state should be rendered
-3. Disable the Button/link to the icon page after its clicked one time.
+1. Render some sort of loading indicator while fetching data
+2. Render information about 10 pokemons after data fetching
+3. Provide the user with the possibility to chose which columns is displayed
+4. Provide the user with the possibility to view detailed stats(hp, defence, attack etc) about each pokemon in the table
 
 ## Tips:
 
+**Material-UI**
+
 You can use all the components available in the @material-ui/core or @material-ui/lab packages.
 
-It doesn't need to be one component. Investigate how material-ui has structured their packages
-
-Try to follow material-ui's [API design approach](https://material-ui.com/guides/api/)
+Try to follow material-ui's [API design approach](https://v4.mui.com/guides/api/)
 
 Think about the API of your components. Make them as flexible and extendable as possible.
+
+**Testing**
+
+A good starting point for setting up / writing test in this application would be [create react app -> Testing -> Running Tests](https://create-react-app.dev/docs/running-tests)
 
 ## Notes
 
@@ -45,7 +54,11 @@ If you are not able to finish the challenge before your interview, just send a m
 
 ## Usable links:
 
-React component library - https://material-ui.com/
+React component library - https://v4.mui.com/
+
+Redux Toolkit Query - https://redux-toolkit.js.org/rtk-query/overview
+
+Pokemon api - https://pokeapi.co/
 
 Material design specification - https://material.io/
 
